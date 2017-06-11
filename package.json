@@ -10,7 +10,8 @@
     "start": "node index.js",
     "watch": "webpack-dev-server --config webpack.dev.babel.js --inline",
     "test": "tape -r babel-core/register src/**/*.spec.js",
-    "lint": "eslint src --ext .js --ext .jsx"
+    "lint": "eslint src --ext .js --ext .jsx",
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "autoprefixer": "^7.1.1",
