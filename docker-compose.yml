@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+    ports:
+    - "8080:8080"
+    environment:
+    - PORT=8080
+    - NODE_ENV=production
+    - EXCHANGE_RATE_API=http://localhost:8888/exchange-rates
+    container_name: exchange-rates
