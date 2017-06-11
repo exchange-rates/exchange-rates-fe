@@ -1,6 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import autoprefixer from 'autoprefixer';
+import Visualizer from 'webpack-visualizer-plugin';
 
 const GLOBALS = {
   'process.env': {
@@ -11,7 +12,6 @@ const GLOBALS = {
 const cwd = process.cwd();
 
 export default {
-  devtool: 'cheap-module-eval-source-map',
   entry: {
     main: path.join(cwd, './src/client.jsx')
   },
@@ -35,6 +35,9 @@ export default {
       }
     }),
     new webpack.DefinePlugin(GLOBALS), // Define variables that appear as variable webpack bundling
+    new Visualizer({
+      filename: './statistics.html'
+    })
   ],
   module: {
     rules: [
