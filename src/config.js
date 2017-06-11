@@ -8,7 +8,7 @@ function getGlobalConfigs() {
 export function getServerConfigs() {
   const config = {
     port: process.env.PORT || 8080,
-    exchangeRatesAPI: process.env.EXCHANGE_RATE_API || 'http://localhost:7000/exchange-rates'
+    exchangeRatesAPI: process.env.EXCHANGE_RATE_API || 'http://localhost:7000/exchange-rates',
   };
 
   return config;

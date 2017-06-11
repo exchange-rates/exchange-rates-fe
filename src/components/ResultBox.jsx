@@ -5,13 +5,15 @@ export default class ResultBox extends Component {
   static propTypes = {
     firstCurrency: PropTypes.string,
     secondCurrency: PropTypes.string,
-    rate: PropTypes.number
+    rate: PropTypes.number,
+    date: PropTypes.string,
   };
 
   static defaultProps = {
     firstCurrency: '',
     secondCurrency: '',
-    rate: null
+    rate: null,
+    date: '',
   };
 
   render() {
@@ -21,9 +23,11 @@ export default class ResultBox extends Component {
 
     const dateString = date ? `For ${date}:` : 'Currently:';
 
-    return <div>
-      <p>{dateString}</p>
-      <p>One {firstCurrency} equals {rate} {secondCurrency}</p>
-    </div>;
+    return (
+      <div>
+        <p>{dateString}</p>
+        <p>One {firstCurrency} equals {rate} {secondCurrency}</p>
+      </div>
+    );
   }
 }

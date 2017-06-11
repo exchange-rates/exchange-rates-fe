@@ -12,11 +12,11 @@ const initialState = {
   firstCurrency: '',
   secondCurrency: '',
   currentRates: '',
-  date: ''
+  date: '',
 };
 
 export default function fxReducer(state = initialState, action) {
-  switch(action.type) {
+  switch (action.type) {
     case GET_CURRENCIES: {
       return { ...state, currencies: action.currencies };
     }
@@ -34,11 +34,16 @@ export default function fxReducer(state = initialState, action) {
     }
     case GET_CURRENT_RATE: {
       const rate = calcFXRate(state.firstCurrency, state.secondCurrency, action.currentRates);
-      return { ...state, currentRates: action.currentRates, rate }
+      return { ...state, currentRates: action.currentRates, rate };
     }
     case REVERSE_CURRENCY: {
       const rate = calcFXRate(state.secondCurrency, state.firstCurrency, state.currentRates);
-      return { ...state, firstCurrency: state.secondCurrency, secondCurrency: state.firstCurrency, rate };
+      return {
+        ...state,
+        firstCurrency: state.secondCurrency,
+        secondCurrency: state.firstCurrency,
+        rate,
+      };
     }
     case UPDATE_DATE: {
       return { ...state, date: action.date };

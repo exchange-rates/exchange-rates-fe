@@ -9,7 +9,7 @@ export default function Html() {
       </head>
       <body>
         <div id="root" />
-        <script dangerouslySetInnerHTML={{ __html: `window.__client_configs__ = ${JSON.stringify(getServerConfigs())}` }}/>
+        <script dangerouslySetInnerHTML={{ __html: `window.__client_configs__ = ${JSON.stringify(getServerConfigs())}` }} />
         <script src="/assets/main.js" />
       </body>
     </html>

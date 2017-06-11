@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import ReduxThunk from 'redux-thunk'
+import ReduxThunk from 'redux-thunk';
 import reducer from './reducers/reducers';
 import Layout from './components/Layout';
 
-const store = createStore(reducer, {}, applyMiddleware(ReduxThunk));
-
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.store = createStore(reducer, {}, applyMiddleware(ReduxThunk));
+  }
+
   render() {
-    return <Provider store={store}>
-      <Layout dispatch={store.dispatch} />
-    </Provider>;
+    return (
+      <Provider store={this.store}>
+        <Layout dispatch={this.store.dispatch} />
+      </Provider>
+    );
   }
 }

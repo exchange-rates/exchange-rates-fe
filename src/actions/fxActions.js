@@ -1,7 +1,7 @@
 import {
   getCurrencies as getCurrenciesService,
   getFXRate,
-  getFXRateByDate as getFXRateByDateService
+  getFXRateByDate as getFXRateByDateService,
 } from '../services/exchangeRatesService';
 import { GET_CURRENCIES, GET_CURRENT_RATE, UPDATE_DATE } from '../reducers/fxReducer';
 
@@ -10,7 +10,7 @@ export function getCurrencies() {
     const currencies = await getCurrenciesService();
 
     dispatch({ type: GET_CURRENCIES, currencies });
-  }
+  };
 }
 
 export function getCurrentFXRate() {
@@ -18,7 +18,7 @@ export function getCurrentFXRate() {
     const currentRates = await getFXRate();
 
     dispatch({ type: GET_CURRENT_RATE, currentRates });
-  }
+  };
 }
 
 export function getFXRateByDate(date) {
@@ -28,5 +28,5 @@ export function getFXRateByDate(date) {
     const currentRates = await getFXRateByDateService(date);
 
     dispatch({ type: GET_CURRENT_RATE, currentRates });
-  }
+  };
 }

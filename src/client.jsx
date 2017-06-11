@@ -10,5 +10,4 @@ if (rootElement) {
     <App />,
     rootElement,
   );
-
 }

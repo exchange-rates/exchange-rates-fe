@@ -3,5 +3,5 @@ export default function calcFXRate(first, second, rates) {
     return null;
   }
 
-  return rates[second]/rates[first];
+  return rates[second] / rates[first];
 }

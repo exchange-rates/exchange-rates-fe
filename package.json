@@ -9,7 +9,7 @@
     "build": "webpack --config webpack.babel.js",
     "start": "node index.js",
     "watch": "webpack-dev-server --config webpack.dev.babel.js --inline",
-    "test": "tape -r babel-core/register src/**/*.spec.js",
+    "test": "tape -r babel-core/register src/**/*.spec.js*",
     "lint": "eslint src --ext .js --ext .jsx",
     "postinstall": "npm run build"
   },
@@ -60,7 +60,13 @@
     "extends": "airbnb",
     "parser": "babel-eslint",
     "globals": {
-      "window": true
+      "window": true,
+      "fetch": true
+    },
+    "rules": {
+      "react/forbid-prop-types": 0,
+      "import/no-named-as-default": 0,
+      "import/no-extraneous-dependencies": 0
     }
   }
 }

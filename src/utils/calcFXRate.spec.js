@@ -3,13 +3,13 @@ import calcFXRate from './calcFXRate';
 
 const rates = {
   HKD: 8,
-  AUD: 1.3
+  AUD: 1.3,
 };
 
 tape('calcFXRate should calculate the proper rates', (t) => {
   const rate = calcFXRate('AUD', 'HKD', rates);
 
-  t.equal(rate, rates.HKD/rates.AUD);
+  t.equal(rate, rates.HKD / rates.AUD);
   t.end();
 });
 
