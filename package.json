@@ -24,6 +24,8 @@
     "css-loader": "^0.28.4",
     "express": "^4.15.3",
     "postcss-loader": "^2.0.5",
+    "preact": "^8.1.0",
+    "preact-compat": "^3.16.0",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-addons-test-utils": "^15.5.1",
